@@ -1,0 +1,21 @@
+{
+  "environment": "SIMULATED",
+  "scenario_id": "EXP-002",
+  "version": "0.1.0",
+  "status": "fixture_only",
+  "name": "ECC degradation",
+  "seed": 7,
+  "trigger": "rising corrected ECC deltas",
+  "telemetry": "ecc_corrected_count",
+  "signal": "risk",
+  "recommendation": "quarantine recommendation",
+  "expected_verification": "GPU excluded; hardware repair not claimed",
+  "execution_implemented": false,
+  "before": {
+    "state": "healthy"
+  },
+  "after": {
+    "state": "injected_fault"
+  },
+  "approval_requirement": "external core gate; no execution in this fixture"
+}

@@ -1,0 +1,9 @@
+{
+  "environment": "SIMULATED", "scenario_id": "EXP-001", "version": "0.1.0",
+  "status": "implemented", "name": "thermal anomaly", "seed": 7,
+  "trigger": "temperature >85C for three consecutive 10s samples",
+  "temperatures_c": [65, 88, 89, 90], "recovery_c": [74, 73, 72, 71, 70],
+  "signal": "risk", "action": "pause_admission", "target": "sim-node-001",
+  "expected": "five post-action samples below 75C and no admission",
+  "limitation": "Recovery is a synthetic job-completion/cooling model, not physical evidence"
+}

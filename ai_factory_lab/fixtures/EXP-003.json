@@ -1,0 +1,21 @@
+{
+  "environment": "SIMULATED",
+  "scenario_id": "EXP-003",
+  "version": "0.1.0",
+  "status": "fixture_only",
+  "name": "workload failure",
+  "seed": 7,
+  "trigger": "job enters FAILED",
+  "telemetry": "job_state",
+  "signal": "risk",
+  "recommendation": "checkpoint-aware retry recommendation",
+  "expected_verification": "output checksum and attempt count",
+  "execution_implemented": false,
+  "before": {
+    "state": "healthy"
+  },
+  "after": {
+    "state": "injected_fault"
+  },
+  "approval_requirement": "external core gate; no execution in this fixture"
+}

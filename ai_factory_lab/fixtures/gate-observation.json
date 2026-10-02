@@ -1,0 +1,9 @@
+{
+  "environment": "SIMULATED",
+  "mode": "FIXTURE_ONLY",
+  "run_id": "fixture-exp001-seed7",
+  "plan_hash": "208dffa38f9d97e148d99898948d92c55f18898a57bee3b2776eabfccb1ef06d",
+  "seed": 7,
+  "clock_start": "2026-09-30T00:00:00+00:00",
+  "notice": "Test observation only; not a core approval or human authorization"
+}

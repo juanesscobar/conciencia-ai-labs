@@ -1,0 +1,21 @@
+{
+  "environment": "SIMULATED",
+  "scenario_id": "EXP-004",
+  "version": "0.1.0",
+  "status": "fixture_only",
+  "name": "underutilization",
+  "seed": 7,
+  "trigger": "utilization below 20% with reserved capacity",
+  "telemetry": "utilization_ratio",
+  "signal": "risk",
+  "recommendation": "consolidation recommendation",
+  "expected_verification": "compare throughput and SLA against baseline",
+  "execution_implemented": false,
+  "before": {
+    "state": "healthy"
+  },
+  "after": {
+    "state": "injected_fault"
+  },
+  "approval_requirement": "external core gate; no execution in this fixture"
+}

@@ -1,0 +1,80 @@
+# Conciencia AI Factory Lab v0.1 — SIMULATED
+
+Lab local para estudiar operaciones GPU gobernadas. No usa GPU, DCGM, APIs pagas ni infraestructura real.
+EXP-001 es una sección vertical ejecutable; EXP-002..005 son **fixtures de diseño**, no experimentos implementados.
+No contiene un motor propio de Missions, Agents, Evidence, Approvals o Economics.
+
+## Demo local reproducible (Python 3.11+)
+
+Desde el checkout `ai-factory-lab`, sin instalación ni servicios:
+
+```powershell
+py -3.12 -m unittest discover -s tests -v
+py -3.12 -m ai_factory_lab --fixture-decision approved --out artifacts/local-demo
+```
+
+Resultado esperado: `environment=SIMULATED`, `integration_mode=FIXTURE_ONLY`, `result=PASS`.
+La decisión es **una fixture de prueba**, no aprobación humana ni integración con Conciencia.
+Por defecto no hay aprobación y no se ejecuta la acción:
+
+```powershell
+py -3.12 -m ai_factory_lab
+py -3.12 -m ai_factory_lab --fixture-decision rejected
+py -3.12 -m ai_factory_lab --fixture-decision approved --missing-telemetry
+```
+
+Estos tres comandos terminan con exit 2, `BLOCKED` o `BLOCKED_INSUFFICIENT_EVIDENCE`. La fixture aprobada está
+ligada al plan de seed 7 y reloj inicial documentado. Cambiar seed/reloj/evidencia requiere otra fixture
+explícita; no se genera una aprobación automática durante la ejecución. Exit 0 solo si verificación PASS.
+
+`result.json` y `manifest.json` identifican entorno, escenario/versiones, seed, timestamps virtuales,
+procedencia, acción/objetivo/parámetros, hashes, Git y fuentes. Un repo nuevo puede no tener commit:
+`git_commit=null` es deliberado, acompañado de hashes del árbol. Los hashes no autentican al aprobador.
+
+## Contrato real del core, sin servidor
+
+El script opt-in ejecuta **el router Signals, servicio de persistencia y gate reales** del checkout core
+registrado. Sustituye únicamente la dependencia de base por SQLite en memoria y la identidad por una
+fixture. No carga `app.main`, `.env`, schedulers ni endpoints remotos. No modifica el core.
+
+```powershell
+py -3.12 scripts/verify_core.py --core ../.openclaw/workspace/mission-control --out artifacts/local-core.json
+```
+
+Requiere FastAPI, SQLAlchemy, Pydantic y httpx disponibles en el intérprete; no son dependencias del simulador.
+Se valida ausencia/rechazo/aprobación con `execute_workflow` y `approve_step`, payload HTTP real, rechazo de
+Mission desconocida, acción simulada y Signal de verificación. El driver de test aprueba: **no es prueba de
+autenticación, aprobación humana, roles, despliegue, PostgreSQL ni controles de presupuesto**.
+Los IDs y timestamps del core varían; la reproducibilidad del modelo se verifica por separado.
+
+## Qué demuestra y qué no
+
+Temperatura sintética >85 °C durante tres muestras de 10 s produce diagnóstico determinista. La acción
+pausa admisión en un nodo simulado. El modelo presupone fin del job y enfriamiento; cinco muestras <75 °C,
+admisión detenida y cero asignaciones prueban recuperación **del modelo**. Pausar admisión no enfría por sí
+solo hardware con jobs activos. El verificador también puede fallar aunque el ejecutor reporte éxito.
+
+El core actual aprueba por step, sin vincular hash/target/identidad/expiración. El Lab conserva el plan
+inmutable y revalida evidencia/revisión/target antes de mutar su estado en memoria. Esto es un invariante
+del simulador, no una solución al gap de seguridad del core. Datos manipulados localmente por el operador
+no constituyen una frontera de seguridad. Ver [contratos y gaps](docs/CONTRACTS.md).
+
+## Cuatro pilares
+
+- Portfolio: esta demo y sus artefactos se pueden reproducir sin hardware; vídeo futuro de 90 s: entorno,
+  trigger, propuesta, fixture/gate, estado observado y límites. No se publicó ni desplegó.
+- Educación: se practican puertos Python, reloj/seed, unidades, pruebas negativas, adaptación HTTP,
+  idempotencia y observación independiente. Linux/redes/CUDA/Kubernetes/DCGM quedan como aprendizaje futuro;
+  ejecutar tests no certifica aprendizaje del operador.
+- Investigación: hipótesis: gates e invariantes reducen ejecuciones no autorizadas en este modelo.
+  Método: misma entrada, tres decisiones; control con evidencia incompleta y recuperación fallida.
+  Resultados concretos en `artifacts/` y reporte; no se comparó un agente LLM ni hardware físico.
+- Negocio: hipótesis de valor en integración y trazabilidad de operaciones. Faltan entrevistas autorizadas,
+  comparación con runbooks/nativas NVIDIA, medición de tiempo humano y disposición a pagar. No hay ahorro
+  económico medido ni presupuesto aplicado.
+
+## Próxima etapa
+
+Ampliar adversariales y controlar el binding de aprobación en el core mediante una fase separada autorizada.
+Después implementar EXP-002..005 y observabilidad. No hay procesos persistentes necesarios en v0.1.
+Si se requiere un core persistente, usar su runbook en otra sesión autorizada, nunca apuntar esta demo a producción.

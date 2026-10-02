@@ -1,0 +1,20 @@
+SIMULATED validation evidence
+test_endpoint_and_acknowledgement (test_simulator.AdapterTests.test_endpoint_and_acknowledgement) ... ok
+test_failures_never_report_delivery (test_simulator.AdapterTests.test_failures_never_report_delivery) ... ok
+test_nonlocal_transport_forbidden (test_simulator.AdapterTests.test_nonlocal_transport_forbidden) ... ok
+test_absent_and_rejected_never_execute (test_simulator.SimulatorTests.test_absent_and_rejected_never_execute) ... ok
+test_changed_evidence_and_stale_revision (test_simulator.SimulatorTests.test_changed_evidence_and_stale_revision) ... ok
+test_changed_target_parameters_revision_and_environment (test_simulator.SimulatorTests.test_changed_target_parameters_revision_and_environment) ... ok
+test_detection_and_success (test_simulator.SimulatorTests.test_detection_and_success) ... ok
+test_idempotency_and_no_mutable_operation_leak (test_simulator.SimulatorTests.test_idempotency_and_no_mutable_operation_leak) ... ok
+test_insufficient_evidence_even_with_approval (test_simulator.SimulatorTests.test_insufficient_evidence_even_with_approval) ... ok
+test_normal_and_duplicate_or_mixed_samples (test_simulator.SimulatorTests.test_normal_and_duplicate_or_mixed_samples) ... ok
+test_reproducibility_and_seed_effect (test_simulator.SimulatorTests.test_reproducibility_and_seed_effect) ... ok
+test_stale_clock_and_invalid_timestamps (test_simulator.SimulatorTests.test_stale_clock_and_invalid_timestamps) ... ok
+test_verifier_fails_despite_successful_execution (test_simulator.SimulatorTests.test_verifier_fails_despite_successful_execution) ... ok
+test_versioned_fixture_and_static_gate_binding (test_simulator.SimulatorTests.test_versioned_fixture_and_static_gate_binding) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.016s
+
+OK

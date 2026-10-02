@@ -1,0 +1,398 @@
+{
+  "environment": "SIMULATED",
+  "integration_mode": "CORE_IN_PROCESS",
+  "status": "PASS",
+  "core_commit": "383ac445a17fe839325aa546138aee183a8fb06b",
+  "core_source_hashes": {
+    "backend/app/routers/signals.py": "26189c54d37ee3ef7eef93602079c7ca41e44f3c83fedb7388b2e4c0a776ce0a",
+    "backend/app/services/signal_service.py": "5d66753f54cf983c3cc959525ed67cb3b322936d8d35a4e4653e2f8447720ffc",
+    "backend/app/services/workflow_engine.py": "658918ac66579e82ad3abe406767d6f7c1767b55c7f35fc9edf60b58b65b92e6",
+    "backend/app/models/mission.py": "b1fedf4bace0db571ebf2d31e6a43f28db1a1c11c499c02e231ed11830eb83c4"
+  },
+  "checks": [
+    "absent: real Signals router 201",
+    "absent: real engine paused",
+    "absent: expected simulation result",
+    "rejected: real Signals router 201",
+    "rejected: real engine paused",
+    "rejected: expected simulation result",
+    "approved: real Signals router 201",
+    "approved: real engine paused",
+    "changed target blocked by local simulator invariant",
+    "approved: expected simulation result",
+    "verification Signal stored by real service",
+    "unknown mission rejected by real service",
+    "actual Pydantic schema rejects missing mission_id"
+  ],
+  "runs": [
+    {
+      "environment": "SIMULATED",
+      "scenario_id": "EXP-001",
+      "scenario_version": "0.1.0",
+      "generator_version": "0.1.0",
+      "seed": 7,
+      "clock_start": "2026-09-30T00:00:00+00:00",
+      "clock_step_seconds": 10,
+      "provenance": "SimulatedGPUProvider/0.1.0",
+      "fixture_hash": "9c9cede6220f6e22588bf85b5c6b798bb2a49928b90cd5eb6ebcf3c112832006",
+      "run_id": "dca96d2ad7ec37f77e12e9f3",
+      "diagnosis": "THERMAL_ANOMALY",
+      "before": [
+        {
+          "timestamp": "2026-09-30T00:00:00+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 64.965,
+          "admission_paused": false,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        },
+        {
+          "timestamp": "2026-09-30T00:00:10+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 87.93,
+          "admission_paused": false,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        },
+        {
+          "timestamp": "2026-09-30T00:00:20+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 89.03,
+          "admission_paused": false,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        },
+        {
+          "timestamp": "2026-09-30T00:00:30+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 89.914,
+          "admission_paused": false,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        }
+      ],
+      "plan": {
+        "target": "sim-node-001",
+        "evidence_hash": "f163c58249dc376685526d6e90f304a1865021cfe95937f13d49c21012335438",
+        "revision": 0,
+        "action": "pause_admission",
+        "parameters": [
+          [
+            "paused",
+            true
+          ]
+        ],
+        "environment": "SIMULATED"
+      },
+      "plan_hash": "208dffa38f9d97e148d99898948d92c55f18898a57bee3b2776eabfccb1ef06d",
+      "rationale": "Three consecutive synthetic samples >85C; pause admission in simulator only.",
+      "limitations": [
+        "No physical thermal model",
+        "Core gate has no plan/identity/expiry binding",
+        "Cooling after pause is a fixture assumption, not an observed hardware effect"
+      ],
+      "integration_mode": "CORE_IN_PROCESS",
+      "gate": {
+        "decision": "waiting_approval",
+        "plan_hash": "208dffa38f9d97e148d99898948d92c55f18898a57bee3b2776eabfccb1ef06d",
+        "source": "CORE_IN_PROCESS",
+        "run_id": "dcb34b504baf4a93a053f06186b90fa5",
+        "step_index": 0
+      },
+      "execution": {
+        "environment": "SIMULATED",
+        "status": "not_executed"
+      },
+      "verification": {
+        "environment": "SIMULATED",
+        "status": "NOT_RUN"
+      },
+      "after": [],
+      "result": "BLOCKED",
+      "reason": "SIMULATED approval absent, rejected or plan changed",
+      "final_state": {
+        "environment": "SIMULATED",
+        "node": "sim-node-001",
+        "gpu": "sim-gpu-001",
+        "revision": 0,
+        "admission_paused": false,
+        "ecc_corrected": 0,
+        "utilization_ratio": 0.9,
+        "power_w_model": 250,
+        "timestamp": "2026-09-30T00:00:40+00:00"
+      },
+      "result_hash": "118e0e7684a9ef779aacc03ef62a18420cae39d988e4bd0f46260e5a8863429a"
+    },
+    {
+      "environment": "SIMULATED",
+      "scenario_id": "EXP-001",
+      "scenario_version": "0.1.0",
+      "generator_version": "0.1.0",
+      "seed": 7,
+      "clock_start": "2026-09-30T00:00:00+00:00",
+      "clock_step_seconds": 10,
+      "provenance": "SimulatedGPUProvider/0.1.0",
+      "fixture_hash": "9c9cede6220f6e22588bf85b5c6b798bb2a49928b90cd5eb6ebcf3c112832006",
+      "run_id": "dca96d2ad7ec37f77e12e9f3",
+      "diagnosis": "THERMAL_ANOMALY",
+      "before": [
+        {
+          "timestamp": "2026-09-30T00:00:00+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 64.965,
+          "admission_paused": false,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        },
+        {
+          "timestamp": "2026-09-30T00:00:10+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 87.93,
+          "admission_paused": false,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        },
+        {
+          "timestamp": "2026-09-30T00:00:20+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 89.03,
+          "admission_paused": false,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        },
+        {
+          "timestamp": "2026-09-30T00:00:30+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 89.914,
+          "admission_paused": false,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        }
+      ],
+      "plan": {
+        "target": "sim-node-001",
+        "evidence_hash": "f163c58249dc376685526d6e90f304a1865021cfe95937f13d49c21012335438",
+        "revision": 0,
+        "action": "pause_admission",
+        "parameters": [
+          [
+            "paused",
+            true
+          ]
+        ],
+        "environment": "SIMULATED"
+      },
+      "plan_hash": "208dffa38f9d97e148d99898948d92c55f18898a57bee3b2776eabfccb1ef06d",
+      "rationale": "Three consecutive synthetic samples >85C; pause admission in simulator only.",
+      "limitations": [
+        "No physical thermal model",
+        "Core gate has no plan/identity/expiry binding",
+        "Cooling after pause is a fixture assumption, not an observed hardware effect"
+      ],
+      "integration_mode": "CORE_IN_PROCESS",
+      "gate": {
+        "decision": "rejected",
+        "plan_hash": "208dffa38f9d97e148d99898948d92c55f18898a57bee3b2776eabfccb1ef06d",
+        "source": "CORE_IN_PROCESS",
+        "run_id": "e8a4c9c4b9d94c44baf4ce2174ef303d",
+        "step_index": 0
+      },
+      "execution": {
+        "environment": "SIMULATED",
+        "status": "not_executed"
+      },
+      "verification": {
+        "environment": "SIMULATED",
+        "status": "NOT_RUN"
+      },
+      "after": [],
+      "result": "BLOCKED",
+      "reason": "SIMULATED approval absent, rejected or plan changed",
+      "final_state": {
+        "environment": "SIMULATED",
+        "node": "sim-node-001",
+        "gpu": "sim-gpu-001",
+        "revision": 0,
+        "admission_paused": false,
+        "ecc_corrected": 0,
+        "utilization_ratio": 0.9,
+        "power_w_model": 250,
+        "timestamp": "2026-09-30T00:00:40+00:00"
+      },
+      "result_hash": "4a824acff6f76f0ddafcaa74b7d9786ba8c13fd2ca87eb73f16ebd5ac5ea99fd"
+    },
+    {
+      "environment": "SIMULATED",
+      "scenario_id": "EXP-001",
+      "scenario_version": "0.1.0",
+      "generator_version": "0.1.0",
+      "seed": 7,
+      "clock_start": "2026-09-30T00:00:00+00:00",
+      "clock_step_seconds": 10,
+      "provenance": "SimulatedGPUProvider/0.1.0",
+      "fixture_hash": "9c9cede6220f6e22588bf85b5c6b798bb2a49928b90cd5eb6ebcf3c112832006",
+      "run_id": "dca96d2ad7ec37f77e12e9f3",
+      "diagnosis": "THERMAL_ANOMALY",
+      "before": [
+        {
+          "timestamp": "2026-09-30T00:00:00+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 64.965,
+          "admission_paused": false,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        },
+        {
+          "timestamp": "2026-09-30T00:00:10+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 87.93,
+          "admission_paused": false,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        },
+        {
+          "timestamp": "2026-09-30T00:00:20+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 89.03,
+          "admission_paused": false,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        },
+        {
+          "timestamp": "2026-09-30T00:00:30+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 89.914,
+          "admission_paused": false,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        }
+      ],
+      "plan": {
+        "target": "sim-node-001",
+        "evidence_hash": "f163c58249dc376685526d6e90f304a1865021cfe95937f13d49c21012335438",
+        "revision": 0,
+        "action": "pause_admission",
+        "parameters": [
+          [
+            "paused",
+            true
+          ]
+        ],
+        "environment": "SIMULATED"
+      },
+      "plan_hash": "208dffa38f9d97e148d99898948d92c55f18898a57bee3b2776eabfccb1ef06d",
+      "rationale": "Three consecutive synthetic samples >85C; pause admission in simulator only.",
+      "limitations": [
+        "No physical thermal model",
+        "Core gate has no plan/identity/expiry binding",
+        "Cooling after pause is a fixture assumption, not an observed hardware effect"
+      ],
+      "integration_mode": "CORE_IN_PROCESS",
+      "gate": {
+        "decision": "approved",
+        "plan_hash": "208dffa38f9d97e148d99898948d92c55f18898a57bee3b2776eabfccb1ef06d",
+        "source": "CORE_IN_PROCESS",
+        "run_id": "697a97a2e8624f6cb663fe93812ec067",
+        "step_index": 0
+      },
+      "execution": {
+        "environment": "SIMULATED",
+        "operation_id": "208dffa38f9d97e148d99898948d92c55f18898a57bee3b2776eabfccb1ef06d",
+        "status": "succeeded",
+        "target": "sim-node-001",
+        "parameters": {
+          "paused": true
+        },
+        "action": "pause_admission",
+        "timestamp": "2026-09-30T00:00:40+00:00"
+      },
+      "verification": {
+        "environment": "SIMULATED",
+        "status": "PASS",
+        "samples_checked": 5,
+        "target": "sim-node-001",
+        "method": "five post-action samples <75C; admission paused; no assignments"
+      },
+      "after": [
+        {
+          "timestamp": "2026-09-30T00:00:40+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 74.007,
+          "admission_paused": true,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        },
+        {
+          "timestamp": "2026-09-30T00:00:50+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 72.973,
+          "admission_paused": true,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        },
+        {
+          "timestamp": "2026-09-30T00:01:00+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 71.912,
+          "admission_paused": true,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        },
+        {
+          "timestamp": "2026-09-30T00:01:10+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 71.001,
+          "admission_paused": true,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        },
+        {
+          "timestamp": "2026-09-30T00:01:20+00:00",
+          "target": "sim-node-001",
+          "temperature_c": 69.907,
+          "admission_paused": true,
+          "assignments": 0,
+          "environment": "SIMULATED",
+          "source": "SimulatedGPUProvider/0.1.0"
+        }
+      ],
+      "result": "PASS",
+      "final_state": {
+        "environment": "SIMULATED",
+        "node": "sim-node-001",
+        "gpu": "sim-gpu-001",
+        "revision": 1,
+        "admission_paused": true,
+        "ecc_corrected": 0,
+        "utilization_ratio": 0.1,
+        "power_w_model": 80,
+        "timestamp": "2026-09-30T00:01:30+00:00"
+      },
+      "result_hash": "7e7e8e4fbb7baf30e361bb5233b1b71bf6a1abc3f07b63387d928bc2b75134b2"
+    }
+  ],
+  "limitations": [
+    "In-memory SQLite dependency; not PostgreSQL or deployed service",
+    "Fixture authentication; roles and real identity NOT tested",
+    "Test driver invokes approve_step; NOT a human approval",
+    "No core binding of plan hash, approver identity or expiry",
+    "No policy or budget enforcement claimed",
+    "No NVIDIA compatibility"
+  ]
+}

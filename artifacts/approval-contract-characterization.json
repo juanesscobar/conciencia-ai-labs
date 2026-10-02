@@ -1,0 +1,83 @@
+{
+  "environment": "SIMULATED",
+  "review_type": "characterization",
+  "core_commit": "383ac445a17fe839325aa546138aee183a8fb06b",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "missing_approval_pauses",
+      "observed": true,
+      "guarantee": "EXISTS: approval:true pauses this workflow run"
+    },
+    {
+      "name": "rejection_cancels",
+      "observed": true,
+      "guarantee": "EXISTS: rejected pending step cancels the run"
+    },
+    {
+      "name": "changed_plan_still_approves",
+      "observed": true,
+      "guarantee": "ABSENT: approval does not bind target, parameters or preconditions"
+    },
+    {
+      "name": "old_pending_run_approves",
+      "observed": true,
+      "guarantee": "ABSENT: no expiration check was observed"
+    },
+    {
+      "name": "approval_handler_has_no_actor_argument",
+      "observed": true,
+      "guarantee": "ABSENT: route has authentication dependency but approval decision has no actor/role enforcement"
+    },
+    {
+      "name": "user_roles_are_data_only_for_gate",
+      "observed": [
+        "admin",
+        "ceo",
+        "member",
+        "viewer"
+      ],
+      "guarantee": "EXISTS: User roles are modeled; no gate role check is wired"
+    },
+    {
+      "name": "sequential_reuse_rejected",
+      "observed": true,
+      "guarantee": "EXISTS: only a paused run with waiting step is accepted"
+    },
+    {
+      "name": "ungated_workflow_completes",
+      "observed": true,
+      "guarantee": "EXISTS: gate is per-step opt-in; no mandatory action policy was observed"
+    },
+    {
+      "name": "retry_configuration_not_executed",
+      "observed": true,
+      "guarantee": "ABSENT: no retry loop was observed in workflow_engine"
+    },
+    {
+      "name": "approval_is_not_append_only_audit",
+      "observed": true,
+      "guarantee": "ABSENT: gate transitions live in WorkflowRun.events, not AuditEvent"
+    },
+    {
+      "name": "no_approval_record_table",
+      "observed": true,
+      "guarantee": "ABSENT: no first-class approval request/decision persistence in inspected model metadata"
+    },
+    {
+      "name": "no_optimistic_version",
+      "observed": true,
+      "guarantee": "ABSENT: no version column on WorkflowRun"
+    },
+    {
+      "name": "no_row_lock_in_approve_step",
+      "observed": true,
+      "guarantee": "GAP: no concurrency characterization is claimed; source inspection found no row lock"
+    }
+  ],
+  "limitations": [
+    "SQLite in memory and fixture identity; no deployed service, PostgreSQL or human actor test",
+    "Concurrent approvals are a documented source-level gap, not a deterministic race proof",
+    "No real infrastructure action was executed"
+  ]
+}

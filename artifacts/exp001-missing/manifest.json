@@ -1,0 +1,28 @@
+{
+  "environment": "SIMULATED",
+  "schema_version": "0.1.0",
+  "captured_at": "2026-09-30T20:32:30.727952+00:00",
+  "integration_mode": "FIXTURE_ONLY",
+  "run_id": "3a6b0e764dad9a5285d0994c",
+  "git_commit": null,
+  "working_tree_dirty": true,
+  "source_hashes": {
+    "ai_factory_lab\\__init__.py": "82509fb3bd0d6b024f7d75054dd1dc4dcbd96a84322d29936335a049fdfdd981",
+    "ai_factory_lab\\__main__.py": "fb7fba907504eb6f75233a1af25a883f2be3e6597716f5babdf24cfe50706ff4",
+    "ai_factory_lab\\domain.py": "c7b02258fddcfd4533c3546a7be6c14aa2bd446b7cf6a4b187ad05b1683e9a2f",
+    "ai_factory_lab\\experiment.py": "86f0c214955cb1eca10bf1741ac3707b96b0dd2ec2a19e3d0020e7a79a055eeb",
+    "ai_factory_lab\\fixtures\\EXP-001.json": "241d7e97569efe632d7726f89b776ca97c536e8fc9eb4e67305b8b6f275d0249",
+    "ai_factory_lab\\fixtures\\EXP-002.json": "90e9b477ad9b983b1848da5c4976a404e559c3f91e9b2ee438aa245511d11a6c",
+    "ai_factory_lab\\fixtures\\EXP-003.json": "c9c53775458fbd59eb9da3049e850962ac328d8b2d8d9b045cfdf26b43de7877",
+    "ai_factory_lab\\fixtures\\EXP-004.json": "4f1fe50d32ae92683b4c753106cd78282df4b9430f52fda82fb85e0a4035d739",
+    "ai_factory_lab\\fixtures\\EXP-005.json": "296d84b6265cb6ff763a66caecd8de649968a3f2119b1f843678e650eb96a5ae",
+    "ai_factory_lab\\fixtures\\gate-observation.json": "160185a703ba4c68f193abae6ae799f5c07274632733209858bf0c83fae339f4",
+    "ai_factory_lab\\signals.py": "f5d2b7e787d989084bfebe2eaad7df1cf8178aa29febee0e242300d87d97e646",
+    "ai_factory_lab\\simulator.py": "07d16693591cd2bfd85551d5b3125fcf84ee8dd3abcfcbf84e5913850532f71f"
+  },
+  "result_hash": "e19af6f52356b4c6268d2bc9c53f4cbe720a0c1c613ddc68a5f573bdc9807398",
+  "seed": 7,
+  "clock_start": "2026-09-30T00:00:00+00:00",
+  "scenario_id": "EXP-001",
+  "scenario_version": "0.1.0"
+}

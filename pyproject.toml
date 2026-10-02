@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-factory-lab"
+version = "0.1.0"
+description = "SIMULATED GPU operations experiments for Conciencia"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.setuptools]
+packages = ["ai_factory_lab"]
+
+[tool.setuptools.package-data]
+ai_factory_lab = ["fixtures/*.json"]
