@@ -4,6 +4,17 @@ Lab local para estudiar operaciones GPU gobernadas. No usa GPU, DCGM, APIs pagas
 EXP-001 es una sección vertical ejecutable; EXP-002..005 son **fixtures de diseño**, no experimentos implementados.
 No contiene un motor propio de Missions, Agents, Evidence, Approvals o Economics.
 
+## EXP-001 — CloudOps real (v0.2)
+
+Además del experimento SIMULATED de arriba, EXP-001 se ejecutó como **CloudOps real** sobre una VM Linux (Hetzner) con un workload FastAPI aislado (systemd, solo loopback) y un fallo de servicio **controlado y autorizado** por un humano. Resultado: **PASS** (con un gate secundario **PARTIAL**).
+
+Circuito validado: detección → evidencia → diagnóstico → aprobación humana → remediación → verificación.
+
+- Reporte: [`docs/EXP-001-CLOUDOPS-REPORT.md`](docs/EXP-001-CLOUDOPS-REPORT.md)
+- Evidencia sanitizada: [`evidence/EXP-001/`](evidence/EXP-001/)
+
+> No es infraestructura GPU ni una AI Factory en producción. El incidente fue intencional; ver *What this does not prove* en el reporte.
+
 ## Demo local reproducible (Python 3.11+)
 
 Desde el checkout `ai-factory-lab`, sin instalación ni servicios:
