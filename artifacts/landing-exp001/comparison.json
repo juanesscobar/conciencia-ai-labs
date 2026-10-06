@@ -1,0 +1,29 @@
+{
+  "environment": "SIMULATED",
+  "schema_version": "exp001-comparison/0.1.0",
+  "reproduction": {
+    "seed": 7,
+    "clock_start": "2026-09-30T00:00:00+00:00",
+    "interactive": false
+  },
+  "decisions": [
+    {
+      "decision": "approved",
+      "result": "PASS",
+      "action_executed": true,
+      "verification": "PASS"
+    },
+    {
+      "decision": "rejected",
+      "result": "BLOCKED",
+      "action_executed": false,
+      "verification": "NOT_RUN"
+    },
+    {
+      "decision": "absent",
+      "result": "BLOCKED",
+      "action_executed": false,
+      "verification": "NOT_RUN"
+    }
+  ]
+}

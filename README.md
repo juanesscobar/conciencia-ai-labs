@@ -31,6 +31,18 @@ explícita; no se genera una aprobación automática durante la ejecución. Exit
 procedencia, acción/objetivo/parámetros, hashes, Git y fuentes. Un repo nuevo puede no tener commit:
 `git_commit=null` es deliberado, acompañado de hashes del árbol. Los hashes no autentican al aprobador.
 
+## Exportación y captura preparada
+
+Para entregar a la landing una comparación reproducible de las decisiones fixture (sin ejecutar controles
+interactivos), generar el paquete SIMULATED:
+
+```powershell
+py -3.12 -m ai_factory_lab --export-comparison artifacts/landing-exp001
+```
+
+El handoff visual está en `docs/LANDING-PACKAGE.md`. La preparación para una captura NVIDIA/Nebius de
+solo lectura, separada del análisis local y sin recursos cloud, está en `docs/NEBIUS-NVIDIA-RUNBOOK.md`.
+
 ## Contrato real del core, sin servidor
 
 El script opt-in ejecuta **el router Signals, servicio de persistencia y gate reales** del checkout core

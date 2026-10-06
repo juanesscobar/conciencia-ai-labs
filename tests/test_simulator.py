@@ -1,12 +1,15 @@
 from dataclasses import asdict, replace
 from datetime import timedelta
 import json
+from pathlib import Path
 import unittest
 
 from ai_factory_lab.domain import GateObservation, canonical, digest
 from ai_factory_lab.experiment import prepare, finish, FIXTURES
 from ai_factory_lab.simulator import SimulatedGPUProvider, ThermalVerifier, diagnose
 from ai_factory_lab.signals import SignalsAdapter, AdapterError, signal_payload, LocalHTTPTransport
+from ai_factory_lab.export import export_comparison
+from ai_factory_lab.nvidia import parse_nvidia_smi_csv
 
 MISSION = "00000000-0000-4000-8000-000000000001"
 
@@ -140,6 +143,27 @@ class AdapterTests(unittest.TestCase):
         for url in ["https://app.conciencia.software", "http://localhost.evil", "http://user@localhost", "http://localhost/path"]:
             with self.assertRaises(ValueError):
                 LocalHTTPTransport(url, "unused-fixture")
+
+
+class ExportAndTelemetryTests(unittest.TestCase):
+    def test_comparison_export_is_reproducible_and_contains_only_simulated_data(self):
+        from tempfile import TemporaryDirectory
+        with TemporaryDirectory() as one, TemporaryDirectory() as two:
+            first = export_comparison(Path(one))
+            second = export_comparison(Path(two))
+            self.assertEqual(canonical(first), canonical(second))
+            self.assertEqual([d["result"] for d in first["decisions"]], ["PASS", "BLOCKED", "BLOCKED"])
+            timeline = json.loads((Path(one) / "timeline.json").read_text())
+            self.assertTrue(all(event["environment"] == "SIMULATED"
+                                for events in timeline["timelines"].values() for event in events))
+
+    def test_nvidia_csv_import_preserves_missing_values(self):
+        raw = (Path(__file__).parent / "fixtures" / "nvidia-smi.csv").read_text()
+        capture = parse_nvidia_smi_csv(raw, "2026-10-02T16:00:01+00:00")
+        self.assertEqual(capture["environment"], "REAL_CAPTURE")
+        self.assertEqual(capture["devices"][0]["power_w"], 315.12)
+        self.assertIsNone(capture["devices"][1]["temperature_c"])
+        self.assertEqual(capture["devices"][1]["memory_used_mib"], 0.0)
 
 
 if __name__ == "__main__":

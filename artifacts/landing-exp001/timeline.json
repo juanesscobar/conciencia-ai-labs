@@ -1,0 +1,137 @@
+{
+  "environment": "SIMULATED",
+  "timelines": {
+    "approved": [
+      {
+        "stage": "observation",
+        "timestamp": "2026-09-30T00:00:00+00:00",
+        "temperature_c": 64.965,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "observation",
+        "timestamp": "2026-09-30T00:00:10+00:00",
+        "temperature_c": 87.93,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "observation",
+        "timestamp": "2026-09-30T00:00:20+00:00",
+        "temperature_c": 89.03,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "observation",
+        "timestamp": "2026-09-30T00:00:30+00:00",
+        "temperature_c": 89.914,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "decision",
+        "decision": "approved",
+        "result": "PASS",
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "action",
+        "action": "pause_admission",
+        "timestamp": "2026-09-30T00:00:40+00:00",
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "verification",
+        "timestamp": "2026-09-30T00:00:40+00:00",
+        "temperature_c": 74.007,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "verification",
+        "timestamp": "2026-09-30T00:00:50+00:00",
+        "temperature_c": 72.973,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "verification",
+        "timestamp": "2026-09-30T00:01:00+00:00",
+        "temperature_c": 71.912,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "verification",
+        "timestamp": "2026-09-30T00:01:10+00:00",
+        "temperature_c": 71.001,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "verification",
+        "timestamp": "2026-09-30T00:01:20+00:00",
+        "temperature_c": 69.907,
+        "environment": "SIMULATED"
+      }
+    ],
+    "rejected": [
+      {
+        "stage": "observation",
+        "timestamp": "2026-09-30T00:00:00+00:00",
+        "temperature_c": 64.965,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "observation",
+        "timestamp": "2026-09-30T00:00:10+00:00",
+        "temperature_c": 87.93,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "observation",
+        "timestamp": "2026-09-30T00:00:20+00:00",
+        "temperature_c": 89.03,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "observation",
+        "timestamp": "2026-09-30T00:00:30+00:00",
+        "temperature_c": 89.914,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "decision",
+        "decision": "rejected",
+        "result": "BLOCKED",
+        "environment": "SIMULATED"
+      }
+    ],
+    "absent": [
+      {
+        "stage": "observation",
+        "timestamp": "2026-09-30T00:00:00+00:00",
+        "temperature_c": 64.965,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "observation",
+        "timestamp": "2026-09-30T00:00:10+00:00",
+        "temperature_c": 87.93,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "observation",
+        "timestamp": "2026-09-30T00:00:20+00:00",
+        "temperature_c": 89.03,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "observation",
+        "timestamp": "2026-09-30T00:00:30+00:00",
+        "temperature_c": 89.914,
+        "environment": "SIMULATED"
+      },
+      {
+        "stage": "decision",
+        "decision": "absent",
+        "result": "BLOCKED",
+        "environment": "SIMULATED"
+      }
+    ]
+  }
+}

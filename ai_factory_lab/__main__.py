@@ -6,6 +6,7 @@ import subprocess
 
 from .domain import GateObservation, digest
 from .experiment import prepare, finish, FIXTURES
+from .export import export_comparison
 
 
 def main():
@@ -15,7 +16,12 @@ def main():
     parser.add_argument("--fixture-decision", choices=["absent", "rejected", "approved"], default="absent")
     parser.add_argument("--missing-telemetry", action="store_true")
     parser.add_argument("--out", type=Path)
+    parser.add_argument("--export-comparison", type=Path,
+                        help="write approved/rejected/absent SIMULATED data package and exit")
     args = parser.parse_args()
+    if args.export_comparison:
+        print(json.dumps(export_comparison(args.export_comparison), indent=2))
+        return 0
     provider, plan, run = prepare(args.seed, args.start, args.missing_telemetry)
     gate = None
     if args.fixture_decision != "absent":
