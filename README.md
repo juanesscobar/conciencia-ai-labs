@@ -1,8 +1,20 @@
-# Conciencia AI Factory Lab v0.1 — SIMULATED
+# Conciencia AI Labs
 
-Lab local para estudiar operaciones GPU gobernadas. No usa GPU, DCGM, APIs pagas ni infraestructura real.
-EXP-001 es una sección vertical ejecutable; EXP-002..005 son **fixtures de diseño**, no experimentos implementados.
-No contiene un motor propio de Missions, Agents, Evidence, Approvals o Economics.
+Conciencia AI Labs is a practical research and engineering lab for experiments in AI systems,
+infrastructure, reliability and agent operations. Experiments are documented with their evidence,
+limitations and reproducibility status.
+
+## Estado de los experimentos
+
+- **Ejecutado (real):** **EXP-001 v0.2 — Controlled Cloud Reliability Loop** sobre una **Linux Cloud VM**
+  real (workload FastAPI aislado, fallo de servicio controlado y autorizado).
+  → [`docs/EXP-001-CLOUDOPS-REPORT.md`](docs/EXP-001-CLOUDOPS-REPORT.md) · [`evidence/EXP-001/`](evidence/EXP-001/).
+- **Simulado:** EXP-001 v0.1 (simulador local, `SIMULATED`) y la validación del core en proceso.
+- **Planeado:** EXP-002…005 (fixtures de diseño; no implementados).
+
+EXP-001 v0.2 **no** es infraestructura GPU ni una AI Factory en producción. Ver *What this does not prove*
+en su reporte. El resto de este repositorio corresponde a la parte **SIMULATED** (sin GPU real, DCGM,
+APIs pagas ni infraestructura real), pensada para estudio local reproducible.
 
 ## EXP-001 — CloudOps real (v0.2)
 
@@ -61,7 +73,7 @@ registrado. Sustituye únicamente la dependencia de base por SQLite en memoria y
 fixture. No carga `app.main`, `.env`, schedulers ni endpoints remotos. No modifica el core.
 
 ```powershell
-py -3.12 scripts/verify_core.py --core ../.openclaw/workspace/mission-control --out artifacts/local-core.json
+py -3.12 scripts/verify_core.py --core ../mission-control --out artifacts/local-core.json
 ```
 
 Requiere FastAPI, SQLAlchemy, Pydantic y httpx disponibles en el intérprete; no son dependencias del simulador.
