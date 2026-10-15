@@ -6,12 +6,17 @@ limitations and reproducibility status.
 
 ## Estado de los experimentos
 
+> **Etiquetas:** `REAL` = ejecutado sobre infraestructura/proveedor real · `SIMULATED` = modelo en memoria,
+> sin hardware/APIs pagas. Cada experimento declara la suya.
+
 - **Ejecutado (real):** **EXP-001 v0.2 — Controlled Cloud Reliability Loop** sobre una **Linux Cloud VM**
   real (workload FastAPI aislado, fallo de servicio controlado y autorizado).
   → [`docs/EXP-001-CLOUDOPS-REPORT.md`](docs/EXP-001-CLOUDOPS-REPORT.md) · [`evidence/EXP-001/`](evidence/EXP-001/).
-- **Ejecutado (real):** **EXP-002A — Provider readiness probe** sobre un proveedor GPU-cloud
-  (Crusoe Cloud · `zai-org/GLM-5.3-Flash`): probe puntual de conectividad y contrato de respuesta.
+- **Ejecutado (real):** **EXP-002A — Provider readiness probe** (`REAL`) sobre un proveedor GPU-cloud
+  (Crusoe Cloud · `zai-org/GLM-5.3-Flash`): probe de conectividad/contrato de respuesta. 3 corridas:
+  1 respuesta vacía, 1 **HTTP 503 `capacity_unavailable`**, 1 éxito (2.071 s, 51 tokens).
   → [`docs/EXP-002A-REPORT.md`](docs/EXP-002A-REPORT.md) · [`evidence/EXP-002A/`](evidence/EXP-002A/).
+  (La resiliencia del proveedor es el foco de EXP-002B.)
 - **Simulado:** EXP-001 v0.1 (simulador local, `SIMULATED`) y la validación del core en proceso.
 - **Planeado:** EXP-002…005 (fixtures de diseño; no implementados. EXP-002 es el fixture SIMULATED
   "ECC degradation"; EXP-002A es el probe REAL, distinto).
