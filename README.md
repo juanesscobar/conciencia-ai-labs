@@ -9,8 +9,12 @@ limitations and reproducibility status.
 - **Ejecutado (real):** **EXP-001 v0.2 — Controlled Cloud Reliability Loop** sobre una **Linux Cloud VM**
   real (workload FastAPI aislado, fallo de servicio controlado y autorizado).
   → [`docs/EXP-001-CLOUDOPS-REPORT.md`](docs/EXP-001-CLOUDOPS-REPORT.md) · [`evidence/EXP-001/`](evidence/EXP-001/).
+- **Ejecutado (real):** **EXP-002A — Provider readiness probe** sobre un proveedor GPU-cloud
+  (Crusoe Cloud · `zai-org/GLM-5.3-Flash`): probe puntual de conectividad y contrato de respuesta.
+  → [`docs/EXP-002A-REPORT.md`](docs/EXP-002A-REPORT.md) · [`evidence/EXP-002A/`](evidence/EXP-002A/).
 - **Simulado:** EXP-001 v0.1 (simulador local, `SIMULATED`) y la validación del core en proceso.
-- **Planeado:** EXP-002…005 (fixtures de diseño; no implementados).
+- **Planeado:** EXP-002…005 (fixtures de diseño; no implementados. EXP-002 es el fixture SIMULATED
+  "ECC degradation"; EXP-002A es el probe REAL, distinto).
 
 EXP-001 v0.2 **no** es infraestructura GPU ni una AI Factory en producción. Ver *What this does not prove*
 en su reporte. El resto de este repositorio corresponde a la parte **SIMULATED** (sin GPU real, DCGM,

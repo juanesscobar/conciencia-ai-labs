@@ -1,0 +1,13 @@
+{
+  "experiment": "EXP-002A",
+  "provider": "crusoe",
+  "model": "zai-org/GLM-5.3-Flash",
+  "timestamp": "2026-10-15T01:38:53.106915+00:00",
+  "latency_seconds": 2.071,
+  "prompt_tokens": 23,
+  "completion_tokens": 28,
+  "total_tokens": 51,
+  "finish_reason": "stop",
+  "reasoning_present": false,
+  "status": "success"
+}
