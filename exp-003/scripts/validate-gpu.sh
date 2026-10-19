@@ -65,7 +65,7 @@ elif ! docker info >/dev/null 2>&1; then
 elif ! docker image inspect "$VLLM_IMAGE" >/dev/null 2>&1; then
   skip "vLLM image not present locally; run scripts/docker-run.sh first"
 else
-  docker run --rm --gpus all "$VLLM_IMAGE" nvidia-smi -L \
+  docker run --rm --gpus all --entrypoint nvidia-smi "$VLLM_IMAGE" -L \
     || fail "container cannot access the GPU"
 fi
 
