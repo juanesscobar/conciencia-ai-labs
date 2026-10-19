@@ -9,6 +9,11 @@ limitations and reproducibility status.
 > **Etiquetas:** `REAL` = ejecutado sobre infraestructura/proveedor real · `SIMULATED` = modelo en memoria,
 > sin hardware/APIs pagas. Cada experimento declara la suya.
 
+- **Ejecutado (real):** **EXP-003 — NVIDIA H200 GPU Inference on Nebius AI Cloud** (`REAL`):
+  1× H200, CUDA 13.0, PyTorch 2.13.0+cu130, DCGM 4.7.0, Docker, vLLM 0.32.0 y
+  `Qwen/Qwen3-0.6B`. Benchmark secuencial de 10 solicitudes: 1.163 tokens de salida,
+  latencia media **0,20773 s** y **559,86 tokens/s** agregados. VM detenida al cierre.
+  → [`exp-003/README.md`](exp-003/README.md) · [`exp-003/reports/EXP-003-H200-INFERENCE.md`](exp-003/reports/EXP-003-H200-INFERENCE.md) · [`exp-003/evidence/public/`](exp-003/evidence/public/).
 - **Ejecutado (real):** **EXP-001 v0.2 — Controlled Cloud Reliability Loop** sobre una **Linux Cloud VM**
   real (workload FastAPI aislado, fallo de servicio controlado y autorizado).
   → [`docs/EXP-001-CLOUDOPS-REPORT.md`](docs/EXP-001-CLOUDOPS-REPORT.md) · [`evidence/EXP-001/`](evidence/EXP-001/).
@@ -18,8 +23,9 @@ limitations and reproducibility status.
   → [`docs/EXP-002A-REPORT.md`](docs/EXP-002A-REPORT.md) · [`evidence/EXP-002A/`](evidence/EXP-002A/).
   (La resiliencia del proveedor es el foco de EXP-002B.)
 - **Simulado:** EXP-001 v0.1 (simulador local, `SIMULATED`) y la validación del core en proceso.
-- **Planeado:** EXP-002…005 (fixtures de diseño; no implementados. EXP-002 es el fixture SIMULATED
-  "ECC degradation"; EXP-002A es el probe REAL, distinto).
+- **Planeado:** EXP-002B…005 (fixtures de diseño; no implementados. EXP-002 es el fixture SIMULATED
+  "ECC degradation"; EXP-002A es el probe REAL, distinto). EXP-003 Session 002 (8B/14B, concurrencia)
+  queda como siguiente paso del experimento GPU.
 
 EXP-001 v0.2 **no** es infraestructura GPU ni una AI Factory en producción. Ver *What this does not prove*
 en su reporte. El resto de este repositorio corresponde a la parte **SIMULATED** (sin GPU real, DCGM,
@@ -120,5 +126,6 @@ no constituyen una frontera de seguridad. Ver [contratos y gaps](docs/CONTRACTS.
 ## Próxima etapa
 
 Ampliar adversariales y controlar el binding de aprobación en el core mediante una fase separada autorizada.
-Después implementar EXP-002..005 y observabilidad. No hay procesos persistentes necesarios en v0.1.
+Después implementar EXP-002B..005 y observabilidad. Para EXP-003, ejecutar Session 002 con modelos 8B/14B,
+concurrencia, TTFT y conciliación de costos. No hay procesos persistentes necesarios en v0.1.
 Si se requiere un core persistente, usar su runbook en otra sesión autorizada, nunca apuntar esta demo a producción.
