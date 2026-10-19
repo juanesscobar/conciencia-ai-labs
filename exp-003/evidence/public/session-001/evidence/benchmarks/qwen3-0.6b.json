@@ -1,0 +1,80 @@
+{
+  "timestamp_utc": "2026-10-19T17:01:18.057562+00:00",
+  "model": "Qwen/Qwen3-0.6B",
+  "gpu": "NVIDIA H200",
+  "requests": [
+    {
+      "request": 1,
+      "latency_seconds": 0.2437,
+      "output_tokens": 127,
+      "tokens_per_second_e2e": 521.16,
+      "finish_reason": "stop"
+    },
+    {
+      "request": 2,
+      "latency_seconds": 0.2265,
+      "output_tokens": 128,
+      "tokens_per_second_e2e": 565.22,
+      "finish_reason": "length"
+    },
+    {
+      "request": 3,
+      "latency_seconds": 0.1935,
+      "output_tokens": 108,
+      "tokens_per_second_e2e": 558.12,
+      "finish_reason": "stop"
+    },
+    {
+      "request": 4,
+      "latency_seconds": 0.1704,
+      "output_tokens": 95,
+      "tokens_per_second_e2e": 557.64,
+      "finish_reason": "stop"
+    },
+    {
+      "request": 5,
+      "latency_seconds": 0.2253,
+      "output_tokens": 128,
+      "tokens_per_second_e2e": 568.05,
+      "finish_reason": "length"
+    },
+    {
+      "request": 6,
+      "latency_seconds": 0.2076,
+      "output_tokens": 118,
+      "tokens_per_second_e2e": 568.44,
+      "finish_reason": "stop"
+    },
+    {
+      "request": 7,
+      "latency_seconds": 0.2255,
+      "output_tokens": 128,
+      "tokens_per_second_e2e": 567.58,
+      "finish_reason": "length"
+    },
+    {
+      "request": 8,
+      "latency_seconds": 0.2265,
+      "output_tokens": 128,
+      "tokens_per_second_e2e": 565.17,
+      "finish_reason": "length"
+    },
+    {
+      "request": 9,
+      "latency_seconds": 0.1682,
+      "output_tokens": 95,
+      "tokens_per_second_e2e": 564.96,
+      "finish_reason": "stop"
+    },
+    {
+      "request": 10,
+      "latency_seconds": 0.1901,
+      "output_tokens": 108,
+      "tokens_per_second_e2e": 568.11,
+      "finish_reason": "stop"
+    }
+  ],
+  "total_output_tokens": 1163,
+  "mean_latency_seconds": 0.20773,
+  "aggregate_output_tokens_per_second": 559.8613584941992
+}

@@ -1,0 +1,35 @@
+Mon Oct 19 16:14:15 UTC 2026
+computeinstance-<redacted>
+Linux computeinstance-<redacted> 6.11.0-1016-nvidia #16-Ubuntu SMP PREEMPT_DYNAMIC Sun Sep 21 17:06:33 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+Mon Oct 19 16:14:15 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.173.02             Driver Version: 580.173.02     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200                    On  |   00000000:8D:00.0 Off |                    0 |
+| N/A   41C    P0             80W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+               total        used        free      shared  buff/cache   available
+Mem:           196Gi       2.2Gi       195Gi       1.4Mi       752Mi       194Gi
+Swap:             0B          0B          0B
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            20G  1.4M   20G   1% /run
+/dev/vda1        96G   18G   78G  19% /
+tmpfs            99G     0   99G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/vda16      881M  258M  562M  32% /boot
+/dev/vda15      105M  6.2M   99M   6% /boot/efi
+cloud-metadata 1008G   16K 1008G   1% /mnt/cloud-metadata
+tmpfs            20G   16K   20G   1% /run/user/1001

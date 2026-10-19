@@ -1,0 +1,16 @@
+b028f0f8d83c0d307678aacb694b16e25ce1f14eea99deca18f04d069f63f28d  ./README.md
+bc91ee84650c3023656da6c34f57f6eb4bafd3fb31e894e5b43770b1339d0f7e  ./sanitization-report.json
+5a82a9786b3de912ac45d33dfdb353fea4e349f5fa30a80919b98784f64d17d8  ./session-001/benchmark_api.py
+c84cef24c1b0db83732334879a335e85521e90107fb569a0ee02342708aab976  ./session-001/evidence/benchmarks/qwen3-0.6b.json
+567de2e716695f83cc96709c4f83d2da43e78876acb5e92d75a58ec521a7ac1d  ./session-001/evidence/dcgm-level1.txt
+342832eda6f6c7156246c7883ba214e3b6f6ce254f1e7db328d88350caf3ee78  ./session-001/evidence/gpu-after-pytorch.txt
+9cbcdf1ba991501eb8d0a7cd877c3364068a82c8a4fb2a6fa2b1fa53d28e6442  ./session-001/evidence/gpu-baseline.txt
+69622b1f027a8387f03c93bde6efb43cee4c39842b003a37829ca5e79303b940  ./session-001/evidence/nvidia-smi-full.txt
+09458ab08d206203c4bb9d59258f6d4e1e2e92a88ab7cf11dd7faebedf8d3a3d  ./session-001/evidence/python-packages.txt
+0f54886af0c56c904e0775607fbb7a1cf15fa105eb8e0835258fb170956a4898  ./session-001/evidence/qwen3-inference.json
+55be0b27fb4297c185ced0c410ec579aa29c09d90697f6b6e3fd8c8c937ede39  ./session-001/evidence/session-ended-utc.txt
+9d58d8d51433142566f521d6002f58f164d668d695b7fb2e1546340b1ecf4b0f  ./session-001/evidence/storage.txt
+f05d98bc6ff5d5f02dc145fe2d432eb28a07a2cb01f1a876b6db29f37085e1e2  ./session-001/evidence/vllm-image-digest.json
+b4c2c55a0d14c6e9ec9e26bf4149f827469efc8e6f9e525a793c131f3fb88c93  ./session-001/evidence/vllm-image-id.txt
+c2d42d6d0ecd258dd6da2c26ed9cb84e5cbec936bc3981ba3789654ad053b880  ./session-001/evidence/vllm-inspect.json
+4c4bd45920e8bc4f79e72439856b93b932c9a5a1ee114ca41d6f70b18bbe060a  ./session-001/evidence/vllm.log

@@ -1,0 +1,61 @@
+[
+  {
+    "Name": "/exp003-vllm",
+    "Created": "2026-10-19T16:41:16.377178147Z",
+    "Image": "sha256:bd8a5d7a8774800c92d714c0c226b32c1863f929150f36efd610aebcd12a335d",
+    "Args": [
+      "serve",
+      "--model",
+      "Qwen/Qwen3-0.6B",
+      "--max-model-len",
+      "4096"
+    ],
+    "State": {
+      "Status": "running",
+      "Running": true,
+      "ExitCode": 0
+    },
+    "Config": {
+      "Image": "vllm/vllm-openai:latest",
+      "Entrypoint": [
+        "vllm",
+        "serve"
+      ],
+      "Cmd": [
+        "--model",
+        "Qwen/Qwen3-0.6B",
+        "--max-model-len",
+        "4096"
+      ]
+    },
+    "HostConfig": {
+      "PortBindings": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8000"
+          }
+        ]
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/home/<user>/exp003/models-cache",
+          "Destination": "/root/.cache/huggingface",
+          "RW": true
+        }
+      ]
+    },
+    "NetworkSettings": {
+      "Ports": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8000"
+          }
+        ]
+      }
+    },
+    "_sanitization": "Container ID, PID, overlay paths, sandbox keys and bridge network identifiers removed."
+  }
+]

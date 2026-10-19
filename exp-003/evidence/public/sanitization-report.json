@@ -1,0 +1,124 @@
+{
+  "generated_at_utc": "2026-10-19T17:30:55.365557+00:00",
+  "input_root": "session-001",
+  "output_root": "session-001",
+  "files": [
+    {
+      "path": "benchmark_api.py",
+      "input_sha256": "5a82a9786b3de912ac45d33dfdb353fea4e349f5fa30a80919b98784f64d17d8",
+      "output_sha256": "5a82a9786b3de912ac45d33dfdb353fea4e349f5fa30a80919b98784f64d17d8",
+      "output_bytes": 2133,
+      "transformations": []
+    },
+    {
+      "path": "evidence/benchmarks/qwen3-0.6b.json",
+      "input_sha256": "c84cef24c1b0db83732334879a335e85521e90107fb569a0ee02342708aab976",
+      "output_sha256": "c84cef24c1b0db83732334879a335e85521e90107fb569a0ee02342708aab976",
+      "output_bytes": 1893,
+      "transformations": []
+    },
+    {
+      "path": "evidence/dcgm-level1.txt",
+      "input_sha256": "567de2e716695f83cc96709c4f83d2da43e78876acb5e92d75a58ec521a7ac1d",
+      "output_sha256": "567de2e716695f83cc96709c4f83d2da43e78876acb5e92d75a58ec521a7ac1d",
+      "output_bytes": 908,
+      "transformations": []
+    },
+    {
+      "path": "evidence/gpu-after-pytorch.txt",
+      "input_sha256": "342832eda6f6c7156246c7883ba214e3b6f6ce254f1e7db328d88350caf3ee78",
+      "output_sha256": "342832eda6f6c7156246c7883ba214e3b6f6ce254f1e7db328d88350caf3ee78",
+      "output_bytes": 1689,
+      "transformations": []
+    },
+    {
+      "path": "evidence/gpu-baseline.txt",
+      "input_sha256": "422dc9e2261cde07b0b337b0c943ff5009195fbb67be30bccb08ecdd20eddbd2",
+      "output_sha256": "9cbcdf1ba991501eb8d0a7cd877c3364068a82c8a4fb2a6fa2b1fa53d28e6442",
+      "output_bytes": 2525,
+      "transformations": [
+        "nebius-instance-hostname"
+      ]
+    },
+    {
+      "path": "evidence/nvidia-smi-full.txt",
+      "input_sha256": "0a9ecbf3efd4d4632d251bde3fcd5e0e768b2cf55f826c71b8fb84c0afa8a0e8",
+      "output_sha256": "69622b1f027a8387f03c93bde6efb43cee4c39842b003a37829ca5e79303b940",
+      "output_bytes": 14337,
+      "transformations": [
+        "gpu-pdi",
+        "gpu-serial",
+        "gpu-uuid",
+        "process-id"
+      ]
+    },
+    {
+      "path": "evidence/python-packages.txt",
+      "input_sha256": "09458ab08d206203c4bb9d59258f6d4e1e2e92a88ab7cf11dd7faebedf8d3a3d",
+      "output_sha256": "09458ab08d206203c4bb9d59258f6d4e1e2e92a88ab7cf11dd7faebedf8d3a3d",
+      "output_bytes": 648,
+      "transformations": []
+    },
+    {
+      "path": "evidence/qwen3-inference.json",
+      "input_sha256": "0f54886af0c56c904e0775607fbb7a1cf15fa105eb8e0835258fb170956a4898",
+      "output_sha256": "0f54886af0c56c904e0775607fbb7a1cf15fa105eb8e0835258fb170956a4898",
+      "output_bytes": 1795,
+      "transformations": []
+    },
+    {
+      "path": "evidence/session-ended-utc.txt",
+      "input_sha256": "55be0b27fb4297c185ced0c410ec579aa29c09d90697f6b6e3fd8c8c937ede39",
+      "output_sha256": "55be0b27fb4297c185ced0c410ec579aa29c09d90697f6b6e3fd8c8c937ede39",
+      "output_bytes": 29,
+      "transformations": []
+    },
+    {
+      "path": "evidence/storage.txt",
+      "input_sha256": "9d58d8d51433142566f521d6002f58f164d668d695b7fb2e1546340b1ecf4b0f",
+      "output_sha256": "9d58d8d51433142566f521d6002f58f164d668d695b7fb2e1546340b1ecf4b0f",
+      "output_bytes": 430,
+      "transformations": []
+    },
+    {
+      "path": "evidence/vllm-image-digest.json",
+      "input_sha256": "f05d98bc6ff5d5f02dc145fe2d432eb28a07a2cb01f1a876b6db29f37085e1e2",
+      "output_sha256": "f05d98bc6ff5d5f02dc145fe2d432eb28a07a2cb01f1a876b6db29f37085e1e2",
+      "output_bytes": 93,
+      "transformations": []
+    },
+    {
+      "path": "evidence/vllm-image-id.txt",
+      "input_sha256": "b4c2c55a0d14c6e9ec9e26bf4149f827469efc8e6f9e525a793c131f3fb88c93",
+      "output_sha256": "b4c2c55a0d14c6e9ec9e26bf4149f827469efc8e6f9e525a793c131f3fb88c93",
+      "output_bytes": 72,
+      "transformations": []
+    },
+    {
+      "path": "evidence/vllm-inspect.json",
+      "input_sha256": "0e073880bbec2bdc9472bd5c52d69317999d07f7ce29d682cf665e891f128cd2",
+      "output_sha256": "c2d42d6d0ecd258dd6da2c26ed9cb84e5cbec936bc3981ba3789654ad053b880",
+      "output_bytes": 1297,
+      "transformations": [
+        "container-ids",
+        "network-identifiers",
+        "overlay-paths",
+        "process-ids"
+      ]
+    },
+    {
+      "path": "evidence/vllm.log",
+      "input_sha256": "0a321482505140e68b070b9b9a5ea702e6946d5d303a313a20009e17c74acf41",
+      "output_sha256": "4c4bd45920e8bc4f79e72439856b93b932c9a5a1ee114ca41d6f70b18bbe060a",
+      "output_bytes": 27367,
+      "transformations": [
+        "docker-bridge-ip"
+      ]
+    }
+  ],
+  "excluded": [],
+  "residual_scan": {
+    "status": "PASS",
+    "findings": []
+  }
+}
